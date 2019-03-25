@@ -5,12 +5,19 @@
   # strategy: free
   become: yes
   connection: paramiko
+  any_errors_fatal: true
   tasks:
     # Get the admin password
     - name: Include the admin passwd role
       block:
         - include_role:
             name: passwd
+      tags: always
+  
+    - name: Verify variables
+      block:
+        - include_role:
+            name: verify
       tags: always
 
     - name: Base
