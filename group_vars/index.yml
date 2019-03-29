@@ -21,4 +21,5 @@ cog:
   version: ESGF_3.0
   dest: /usr/local/cog/cog_install
   base: /usr/local/cog
-  wsgi_dir: /etc/cog-wsgi-8889
+  port: 8889
+  wsgi_dir: /etc/cog-wsgi-{{ cog.port }}

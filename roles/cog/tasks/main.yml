@@ -59,7 +59,7 @@
     mod_wsgi-express setup-server apache/wsgi.py \
     --server-root {{ cog.wsgi_dir }} \
     --user apache --group apache \
-    --host localhost --port 8889 \
+    --host localhost --port {{ cog.port }} \
     --url-alias /static {{ cog.dest }}/static/
   args:
     chdir: "{{ cog.dest }}"
